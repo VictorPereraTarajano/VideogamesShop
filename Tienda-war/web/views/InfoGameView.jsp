@@ -1,3 +1,4 @@
+<%@page import="javax.naming.InitialContext"%>
 <%@page import="interfaces.ICatalog"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="entities.Product"%>
@@ -18,7 +19,7 @@
     <body>
 
         <%
-            ICatalog catalog = (ICatalog) request.getSession().getAttribute("Catalog");
+            ICatalog catalog = (ICatalog) new InitialContext().lookup("java:app/Tienda-ejb/Catalog");
             Product product =  catalog.getCatalog().get(Integer.parseInt(request.getParameter("productID")));
 
         %>

@@ -12,8 +12,8 @@ public class FinalCMD extends FrontCommand {
         
         HttpSession session = this.getSession();
         IShoppingCart cart = getCart(session);
-        IStadistics stats = getStadistics(session);
-        
+        IStadistics stats = getStadistics();
+
         stats.setNumSuccesfulBuys(stats.getNumSuccesfulBuys() + 1);
         stats.setTotal(stats.getTotal() + cart.getTotal());
         

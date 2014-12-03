@@ -2,6 +2,7 @@ package commands;
 
 import javax.servlet.http.HttpSession;
 import entities.Client;
+import interfaces.IShoppingCart;
 
 public class ConfirmationCMD extends FrontCommand {
 
@@ -9,8 +10,10 @@ public class ConfirmationCMD extends FrontCommand {
     public void process() {
         
         HttpSession session = this.getSession();
+
+        IShoppingCart cart = (IShoppingCart) getCart(session);
         
-        Client client = (Client) session.getAttribute("Client");
+        Client client = new Client ();
         
         client.setName(request.getParameter("name"));
         client.setSurname(request.getParameter("surname"));
@@ -19,7 +22,7 @@ public class ConfirmationCMD extends FrontCommand {
         client.setMmyy(request.getParameter("mmyy"));
         client.setCvc(request.getParameter("cvc"));
         
-        session.setAttribute("Client", client);
+        cart.setClient(client);
         
         forward(request, response, "/views/ConfirmationView.jsp"); 
     }

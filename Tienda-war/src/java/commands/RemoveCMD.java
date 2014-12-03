@@ -14,9 +14,7 @@ public class RemoveCMD extends FrontCommand {
         HttpSession session = this.getSession();
         IShoppingCart cart = this.getCart(session);
         ICatalog catalog = getCatalog();
-        
-        HashMap<Product, Integer> cartList = cart.getCart();
-
+       
         int productID = Integer.parseInt(request.getParameter("productID"));
         
         cart.removeProduct(catalog, productID);
@@ -24,7 +22,8 @@ public class RemoveCMD extends FrontCommand {
         cart.setUpdate(false);
         catalog.applyCartDiscounts(cart);
         
-        session.setAttribute("ShoppingCart", cart);
+        //session.setAttribute("ShoppingCart", cart);
+        
         forward(request, response, "/views/CartView.jsp");
     }
 }

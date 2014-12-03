@@ -1,3 +1,4 @@
+<%@page import="javax.naming.InitialContext"%>
 <%@page import="discount.Discount"%>
 <%@page import="interfaces.ICatalog"%>
 <%@page import="interfaces.IShoppingCart"%>
@@ -25,7 +26,7 @@
         <h1 ><b>GAMES OF THE WEEK</b></h1>
 
         <%
-            ICatalog catalog = (ICatalog) request.getSession().getAttribute("Catalog");
+            ICatalog catalog = (ICatalog) new InitialContext().lookup("java:app/Tienda-ejb/Catalog");
             IShoppingCart cart = (IShoppingCart) request.getSession().getAttribute("ShoppingCart");
         %>
         

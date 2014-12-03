@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Client implements Serializable {
     
-    private String name, surname, email, cardnumber, mmyy, cvc;
+    private String name="", surname="", email="", cardnumber="", mmyy="", cvc="";
 
     public Client(String name, String surname, String email, String cardnumber, String mmyy, String cvc) {
         this.name = name;
@@ -13,6 +13,9 @@ public class Client implements Serializable {
         this.cardnumber = cardnumber;
         this.mmyy = mmyy;
         this.cvc = cvc;
+    }
+
+    public Client() {
     }
 
     public void setName(String name) {

@@ -14,15 +14,13 @@ public class HomeCMD extends FrontCommand {
 
         IShoppingCart cart = getCart(session);
         ICatalog catalog = getCatalog();
-        IStadistics stats = getStadistics(session);
+        IStadistics stats = getStadistics();
         
         stats.setNumAccess(stats.getNumAccess() + 1);
         
         catalog.applyProductDiscounts();
         
-        session.setAttribute("Catalog", catalog);
         session.setAttribute("ShoppingCart", cart);
-        session.setAttribute("Stadistics", stats);
         
         forward(request, response, "/views/HomeView.jsp");
     }

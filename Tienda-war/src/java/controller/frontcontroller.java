@@ -3,9 +3,11 @@ package controller;
 
 
 import commands.FrontCommand;
+import interfaces.IStadistics;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = {"/frontcontroller"})
 public class frontcontroller extends HttpServlet {
+    
+    @EJB(name="Stadistics", beanInterface = IStadistics.class)   
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         response.setContentType("text/html;charset=UTF-8");

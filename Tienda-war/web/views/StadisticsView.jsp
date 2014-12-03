@@ -1,3 +1,4 @@
+<%@page import="javax.naming.InitialContext"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="entities.Product"%>
@@ -20,7 +21,7 @@
             <h3 class="modal-title" id="myModalLabel"><b>STADISTICS</b></h3>
                 <table class="table table-hover">
                     <%
-                        IStadistics stats = (IStadistics) request.getSession().getAttribute("Stadistics");
+                        IStadistics stats = (IStadistics) new InitialContext().lookup("java:app/Tienda-ejb/Stadistics");
                     %>
                     <tr class="info"><td><h3><b>NUMBER OF HOME ACCESS : </b></h3></td><td><h3><%=stats.getNumAccess() %></h3></td></tr>
                     <tr class="info"><td><h3><b>NUMBER OF SHOPPING CART ACCESS : </b></h3></td><td><h3><%=stats.getNumAccessShoppingCart()%></h3></td></tr>

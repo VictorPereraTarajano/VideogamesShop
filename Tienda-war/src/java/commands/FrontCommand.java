@@ -49,20 +49,17 @@ public abstract class FrontCommand {
             return (ICatalog) new InitialContext().lookup("java:app/Tienda-ejb/Catalog");
         } catch (NamingException ex) {
             ex.printStackTrace();
+            return null;
         }
-        return null;
     }
     
-    public IStadistics getStadistics (HttpSession session) {
-        IStadistics stats = (IStadistics) session.getAttribute("Stadistics");
-        if (stats == null) {
+    public IStadistics getStadistics () {
             try {
                 return (IStadistics) new InitialContext().lookup("java:app/Tienda-ejb/Stadistics");
             } catch (NamingException ex) {
                 ex.printStackTrace();
+                return null;
             }
-        }
-        return stats;
     }
 
     public void forward(HttpServletRequest request, HttpServletResponse response, String to) {

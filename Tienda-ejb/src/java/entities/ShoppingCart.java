@@ -10,11 +10,17 @@ import loader.ProductLoader;
 @Stateful
 public class ShoppingCart implements IShoppingCart {
 
-    private HashMap<Product, Integer> cart = new HashMap<>();
+    private HashMap<Product, Integer> cart;
     private double total = 0;
     private Date date;
     private boolean update = false;
+    private Client client;
   
+    public ShoppingCart () {
+        cart = new HashMap<>();
+        client = new Client();
+    }
+    
     @Override
     public int getTotalProducts() {
         int total=0;
@@ -67,6 +73,16 @@ public class ShoppingCart implements IShoppingCart {
     @Override
     public Date getDate () {
         return this.date;
+    }
+
+    @Override
+    public Client getClient() {
+        return this.client;
+    }
+
+    @Override
+    public void setClient(Client client) {
+        this.client = client;
     }
 
 }

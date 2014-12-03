@@ -31,7 +31,7 @@
                     DateFormat dateFormat = new SimpleDateFormat("dd//MM/yyyy HH:mm:ss");
                     cart.setDate(Calendar.getInstance().getTime());
                     
-                    Client client = (Client) request.getSession().getAttribute("Client");
+                    Client client = cart.getClient();
                 %>
                 <tr class="info"><td><h3>DATE    : </h3></td><td><h3><%=cart.getDate() %></h3></td></tr>
                 <tr class="info"><td><h3>NAME    : </h3></td><td><h3><%=client.getName()%></h3></td></tr>

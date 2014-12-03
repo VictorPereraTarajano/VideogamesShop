@@ -1,5 +1,6 @@
 package interfaces;
 
+import entities.Client;
 import java.util.Date;
 import java.util.HashMap;
 import javax.ejb.Local;
@@ -27,5 +28,9 @@ public interface IShoppingCart {
     public boolean isUpdate();
     
     public void setUpdate (boolean update);
+    
+    public Client getClient ();
+    
+    public void setClient (Client client);
 
 }

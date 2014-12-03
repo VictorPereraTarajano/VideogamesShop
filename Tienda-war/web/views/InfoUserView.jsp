@@ -1,3 +1,4 @@
+<%@page import="interfaces.IShoppingCart"%>
 <%@page import="entities.Client"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -25,7 +26,9 @@
                         </div>
                         
                         <%                           
-                            Client client = (Client) request.getSession().getAttribute("Client");
+                            IShoppingCart cart = (IShoppingCart) request.getSession().getAttribute("ShoppingCart");
+                            Client client = cart.getClient();
+                            
                             if (client == null) {
                                 client = new Client("","","","","","");
                                 request.getSession().setAttribute("Client", client);

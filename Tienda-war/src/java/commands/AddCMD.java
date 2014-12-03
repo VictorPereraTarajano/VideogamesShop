@@ -19,7 +19,8 @@ public class AddCMD extends FrontCommand {
 
         cart.setUpdate(false);
         
-        session.setAttribute("ShoppingCart", cart);
+        //session.setAttribute("ShoppingCart", cart);
+        
         forward(request, response, "/views/HomeView.jsp");
     }
 }
