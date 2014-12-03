@@ -13,7 +13,6 @@ public class ShoppingCart implements IShoppingCart {
     private HashMap<Product, Integer> cart;
     private double total = 0;
     private Date date;
-    private boolean update = false;
     private Client client;
   
     public ShoppingCart () {
@@ -28,16 +27,6 @@ public class ShoppingCart implements IShoppingCart {
             total += cart.get(product);
         }
         return total;
-    }
-
-    @Override
-    public void setUpdate(boolean update) {
-        this.update = update;
-    }
-
-    @Override
-    public boolean isUpdate() {
-        return update;
     }
     
     @Override
@@ -83,6 +72,11 @@ public class ShoppingCart implements IShoppingCart {
     @Override
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    @Override
+    public void clear () {
+        cart.clear();     
     }
 
 }

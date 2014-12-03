@@ -1,17 +1,11 @@
 package commands;
 
-import javax.servlet.http.HttpSession;
 import entities.Client;
-import interfaces.IShoppingCart;
 
 public class ConfirmationCMD extends FrontCommand {
 
     @Override
     public void process() {
-        
-        HttpSession session = this.getSession();
-
-        IShoppingCart cart = (IShoppingCart) getCart(session);
         
         Client client = new Client ();
         
@@ -22,7 +16,7 @@ public class ConfirmationCMD extends FrontCommand {
         client.setMmyy(request.getParameter("mmyy"));
         client.setCvc(request.getParameter("cvc"));
         
-        cart.setClient(client);
+        getCart(getSession()).setClient(client);
         
         forward(request, response, "/views/ConfirmationView.jsp"); 
     }

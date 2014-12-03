@@ -10,7 +10,7 @@ public class FinalCMD extends FrontCommand {
     @Override
     public void process() {
         
-        HttpSession session = this.getSession();
+        HttpSession session = getSession();
         IShoppingCart cart = getCart(session);
         IStadistics stats = getStadistics();
 
@@ -19,12 +19,8 @@ public class FinalCMD extends FrontCommand {
         
         new Generator().generateFile(session, request);
         
-        clear(cart);
+        cart.clear();
         
         forward(request, response, "/views/FinalView.jsp");
-    }
-    
-    private void clear (IShoppingCart cart) {
-        cart.getCart().clear();     
     }
 }

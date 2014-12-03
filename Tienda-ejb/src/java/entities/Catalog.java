@@ -40,17 +40,14 @@ public class Catalog implements ICatalog {
 
     @Override
     public void applyCartDiscounts(IShoppingCart cart) {
-        if (!cart.isUpdate()) {
-            for (Product product : cart.getCart().keySet()) {
-                try {
-                    Discount discount = product.getDiscount();
-                    if (discount != null)   {
-                        ((CartDiscount) discount).apply(cart, product);
-                    }
-                } catch (ClassCastException ex) {
+        for (Product product : cart.getCart().keySet()) {
+            try {
+                Discount discount = product.getDiscount();
+                if (discount != null)   {
+                    ((CartDiscount) discount).apply(cart, product);
                 }
+            } catch (ClassCastException ex) {
             }
-            cart.setUpdate(true);
         }
     }
   

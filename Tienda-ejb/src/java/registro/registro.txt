@@ -2,7 +2,7 @@
 
 **************** USER INFO **************** 
 *                                                      
-*      Date    : Wed Dec 03 19:36:20 GMT 2014
+*      Date    : Wed Dec 03 22:08:13 GMT 2014
 *      Name    : null
 *      Surname : null
 *      Email   : null
@@ -12,7 +12,10 @@
 *
 *********************** SHOPPING CART *******************************
 *   ID          PRODUCT             PRIZE          AMOUNT          CODE     *
-      1          The Witcher 2 30.0       1          pSMeoROn  
+      2          Zelda Majora's Mask HD 30.0       2          wJmAIgYZ  
+      3          Diablo 3   20.865000000000002 1          lMIpCurn  
+      5          Borderlands 2 7.75       1          MYranjpv  
+      6          Destiny    20.0       1          xDQAJGyt  
 -------------------------------------------------
-                    TOTAL : 30.0 €
+                    TOTAL : 78.61500000000001 €
 

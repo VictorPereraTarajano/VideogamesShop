@@ -25,12 +25,10 @@ public interface IShoppingCart {
     
     public Date getDate ();
     
-    public boolean isUpdate();
-    
-    public void setUpdate (boolean update);
-    
     public Client getClient ();
     
     public void setClient (Client client);
+    
+    public void clear ();
 
 }
