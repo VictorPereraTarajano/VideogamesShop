@@ -1,0 +1,23 @@
+
+
+**************** USER INFO **************** 
+*                                                      
+*      Date    : Wed Dec 03 18:09:21 GMT 2014
+*      Name    : null
+*      Surname : null
+*      Email   : null
+*      Card    : null
+*      MM/YY   : null
+*      CVC     : null
+*
+*********************** SHOPPING CART *******************************
+*   ID          PRODUCT             PRIZE          AMOUNT          CODE     *
+      3          Diablo 3   20.865000000000002 1          mHbXOezC  
+      6          Destiny    20.0       1          JzywlDwc  
+      2          Zelda Majora's Mask HD 30.0       1          sjBKFcSC  
+      1          The Witcher 2 30.0       1          grbHfwds  
+      4          Batman Arkham Knight 11.25      1          wvbbRRha  
+      5          Borderlands 2 7.75       1          lmCjvPaf  
+-------------------------------------------------
+                    TOTAL : 119.86500000000001 €
+
