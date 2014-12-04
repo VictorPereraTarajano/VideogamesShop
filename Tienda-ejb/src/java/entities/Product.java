@@ -6,13 +6,12 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Random;
 
-public class Product implements Serializable, Discountable{
+public class Product extends Discountable implements Serializable{
 
     private String name, URLimage, description;
     private int ID;
     private final double pricePerUnit;
     private double price;
-    private Discount discount;
     private Date date;
 
     public Date getDate() {
@@ -35,16 +34,6 @@ public class Product implements Serializable, Discountable{
     
     public void setPrice (Double price) {
         this.price = price;
-    }
-    
-    @Override
-    public Discount getDiscount() {
-        return this.discount;
-    }
-    
-    @Override
-    public void setDiscount(Discount discount) {
-        this.discount = discount;
     }
     
     public double getPrice() {

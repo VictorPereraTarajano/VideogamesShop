@@ -1,0 +1,107 @@
+
+
+**************** USER INFO **************** 
+*                                                      
+*      Date    : Fri Oct 17 13:41:53 BST 2014
+*      Name    : Victor
+*      Surname : Perera
+*      Email   : viic.las
+*      Card    : 213-12321-21321
+*      MM/YY   : 18/2
+*      CVC     : 213
+*
+*********************** SHOPPING CART ***********************
+*   ID          PRODUCT             PRIZE          CODE     *
+      1          The Witcher 2 30.0       QPucIdpE  
+      4          Batman Arkham Knight 15.0       UlYNEkil  
+-------------------------------------------------
+                    TOTAL : 45.0 €
+
+
+
+**************** USER INFO **************** 
+*                                                      
+*      Date    : Fri Oct 17 13:42:34 BST 2014
+*      Name    : dfgdf
+*      Surname : tdtf
+*      Email   : dsf
+*      Card    : 
+*      MM/YY   : 
+*      CVC     : 
+*
+*********************** SHOPPING CART ***********************
+*   ID          PRODUCT             PRIZE          CODE     *
+      1          The Witcher 2 30.0       elWndxUT  
+      2          Zelda Majora's Mask HD 60.0       quXGXdGH  
+      3          Diablo 3   19.5       QROSNpTR  
+      2          Zelda Majora's Mask HD 60.0       pazaeHyj  
+      2          Zelda Majora's Mask HD 60.0       JOJwLFfF  
+      2          Zelda Majora's Mask HD 60.0       PTbwRMAc  
+      2          Zelda Majora's Mask HD 60.0       gHeQmCMI  
+-------------------------------------------------
+                    TOTAL : 349.5 €
+
+
+
+**************** USER INFO **************** 
+*                                                      
+*      Date    : Fri Oct 17 13:48:25 BST 2014
+*      Name    : 
+*      Surname : 
+*      Email   : 
+*      Card    : 
+*      MM/YY   : 
+*      CVC     : 
+*
+*********************** SHOPPING CART ***********************
+*   ID          PRODUCT             PRIZE          CODE     *
+      1          The Witcher 2 30.0       YzpPdYom  
+      2          Zelda Majora's Mask HD 60.0       ytPbyYSN  
+-------------------------------------------------
+                    TOTAL : 90.0 €
+
+
+
+**************** USER INFO **************** 
+*                                                      
+*      Date    : Fri Oct 17 13:49:00 BST 2014
+*      Name    : ytdytdyt
+*      Surname : tdhtdyhtd
+*      Email   : dytdyut
+*      Card    : dutdu
+*      MM/YY   : tdutdu
+*      CVC     : tdu
+*
+*********************** SHOPPING CART ***********************
+*   ID          PRODUCT             PRIZE          CODE     *
+      1          The Witcher 2 30.0       lxnqBsou  
+      1          The Witcher 2 30.0       GEYObLPq  
+      1          The Witcher 2 30.0       gsSDfmum  
+      1          The Witcher 2 30.0       UQgCHKuB  
+      1          The Witcher 2 30.0       OZPMkYkg  
+      1          The Witcher 2 30.0       vhtXMQZX  
+      2          Zelda Majora's Mask HD 60.0       XafguPEi  
+      2          Zelda Majora's Mask HD 60.0       JJUGbAgP  
+-------------------------------------------------
+                    TOTAL : 300.0 €
+
+
+
+**************** USER INFO **************** 
+*                                                      
+*      Date    : Fri Oct 17 14:45:05 BST 2014
+*      Name    : 
+*      Surname : 
+*      Email   : 
+*      Card    : 
+*      MM/YY   : 
+*      CVC     : 
+*
+*********************** SHOPPING CART ***********************
+*   ID          PRODUCT             PRIZE          CODE     *
+      1          The Witcher 2 30.0       UCsKAHVO  
+      2          Zelda Majora's Mask HD 60.0       KGJAvLpx  
+      3          Diablo 3   19.5       qTdymeaI  
+-------------------------------------------------
+                    TOTAL : 109.5 €
+

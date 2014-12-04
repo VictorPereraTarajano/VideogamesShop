@@ -1,6 +1,8 @@
-1;3
-2;2
-3;0
-4;1
-5;2
-6;2
+5;TwoForOne
+4;TwoForOne
+1;TwoForOne
+1;RandomDiscount
+2;RandomDiscount
+3;RandomDiscount
+4;TemporaryDiscount
+6;TemporaryDiscount

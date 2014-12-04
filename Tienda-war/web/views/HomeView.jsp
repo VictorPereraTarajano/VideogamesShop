@@ -63,15 +63,15 @@
                         + "<input type=\"hidden\" name=\"command\" value=\"InfoCMD\">"
                         
                         + "<button type=\"submit\" class=\"btn btn-primary btn-lg\" ><b>INFO </b><span class=\"glyphicon glyphicon-info-sign\"></span></button>"
-                        + "<button class=\"btn btn-danger btn-lg pull-right disabled \" ><b>" + DecimalFormater.format((double) product.getPrice()) + " <span class=\"glyphicon glyphicon-euro\"></span></b></button>"
+                        + "<button class=\"btn btn-danger btn-lg pull-right disabled \" ><b>" + DecimalFormater.format((double) Discount.applyIVA(product.getDiscount(product, 1))) + " <span class=\"glyphicon glyphicon-euro\"></span></b></button>"
                         + "</form>"
-                        + "<h4><b>DISCOUNT: ");
-                        Discount disc = product.getDiscount();
+                        + "<h4><b>DISCOUNT: "+product.getPricePerUnit());
+                       /* Discount disc = product.getDiscount();
                         
                         if (disc != null && product.getDiscount().isRated()) 
                             out.print(" "+disc.getName()+" "+disc.getRated()+" % of "+product.getPricePerUnit()+" €");
                         else
-                            out.print(" "+disc.getName());
+                            out.print(" "+disc.getName());*/
                         
                         out.print("</b></h4>"
                         + "</div>"

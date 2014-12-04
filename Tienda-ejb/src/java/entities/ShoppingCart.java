@@ -1,5 +1,6 @@
 package entities;
 
+import discount.Discountable;
 import interfaces.ICatalog;
 import interfaces.IShoppingCart;
 import java.util.Date;
@@ -9,7 +10,7 @@ import javax.ejb.Stateful;
 import loader.ProductLoader;
 
 @Stateful
-public class ShoppingCart implements IShoppingCart {
+public class ShoppingCart extends Discountable implements IShoppingCart {
 
     private HashMap<Product, Integer> cart;
     private double total = 0;
@@ -20,7 +21,7 @@ public class ShoppingCart implements IShoppingCart {
     public void init () {
         cart = new HashMap<>();
         client = new Client();
-    }
+    }     
     
     @Override
     public int getTotalProducts() {

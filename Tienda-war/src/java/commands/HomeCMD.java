@@ -14,7 +14,7 @@ public class HomeCMD extends FrontCommand {
         
         stats.setNumAccess(stats.getNumAccess() + 1);
         
-        getCatalog().applyProductDiscounts();
+        //getCatalog().applyProductDiscounts();
         
         session.setAttribute("ShoppingCart", getCart(session));
         

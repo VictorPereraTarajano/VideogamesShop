@@ -8,9 +8,5 @@ import entities.Product;
 public interface ICatalog {
      
     public ArrayList<Product> getCatalog();
-
-    public void applyProductDiscounts();
-    
-    public void applyCartDiscounts(IShoppingCart cart);
     
 }

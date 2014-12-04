@@ -9,8 +9,6 @@ public class CartCMD extends FrontCommand {
     @Override
     public void process() {
         
-        getCatalog().applyCartDiscounts((IShoppingCart) getSession().getAttribute("ShoppingCart"));
-    
         IStadistics stats = getStadistics();
         
         stats.setNumAccessShoppingCart(stats.getNumAccessShoppingCart() + 1);

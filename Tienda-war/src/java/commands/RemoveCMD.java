@@ -12,8 +12,6 @@ public class RemoveCMD extends FrontCommand {
         ICatalog catalog = getCatalog();
         
         cart.removeProduct(catalog, Integer.parseInt(request.getParameter("productID")));
-
-        catalog.applyCartDiscounts(cart);
         
         forward(request, response, "/views/CartView.jsp");
     }
