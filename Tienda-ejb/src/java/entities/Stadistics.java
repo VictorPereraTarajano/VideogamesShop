@@ -10,8 +10,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import javax.annotation.PostConstruct;
+import javax.ejb.Lock;
+import javax.ejb.LockType;
 import javax.ejb.Singleton;
+import javax.ejb.Startup;
 
+@Startup
 @Singleton
 public class Stadistics implements IStadistics {
 
@@ -24,46 +28,55 @@ public class Stadistics implements IStadistics {
         mostPurchasedProducts = new TreeMap<>();
     }
     
+    @Lock(LockType.READ)    
     @Override
     public int getNumAccess() {
         return this.numAccess;
     }
-
+    
+    @Lock(LockType.READ)
     @Override
     public int getNumAccessShoppingCart() {
         return this.numAccessShoppingCart;
     }
-
+    
+    @Lock(LockType.READ)
     @Override
     public int getNumSuccesfulBuys() {
         return this.numSuccesfulBuys;
     }
-
+    
+    @Lock(LockType.WRITE)
     @Override
     public void setNumAccess(int numAccess) {
         this.numAccess=numAccess;
     }
-
+    
+    @Lock(LockType.WRITE)
     @Override
     public void setNumAccessShoppingCart(int numAccessShoppingCart) {
         this.numAccessShoppingCart=numAccessShoppingCart;
     }
-
+    
+    @Lock(LockType.WRITE)
     @Override
     public void setNumSuccesfulBuys(int numSuccesfulBuys) {
         this.numSuccesfulBuys=numSuccesfulBuys;
     }
-
+    
+    @Lock(LockType.READ)
     @Override
     public double getTotal() {
         return this.total;
     }
-
+    
+    @Lock(LockType.WRITE)
     @Override
     public void setTotal(double total) {
         this.total=total;
     }
 
+    @Lock(LockType.READ)
     @Override
     public List<Product> getMostPurchasedProducts(int tam) {
         List<Product> list = new ArrayList<>(mostPurchasedProducts.keySet());
@@ -88,6 +101,5 @@ public class Stadistics implements IStadistics {
                 mostPurchasedProducts.put(product, 1);
             }
         }
-    }
-    
+    }   
 }

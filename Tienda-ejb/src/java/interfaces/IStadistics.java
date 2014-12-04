@@ -4,7 +4,7 @@ import entities.Product;
 import java.util.List;
 import javax.ejb.Local;
 
- @Local
+@Local
 public interface IStadistics {
      
   public int getNumAccess();

@@ -7,6 +7,7 @@ import discount.Discount;
 import loader.DiscountLoader;
 import discount.productdiscount.ProductDiscount;
 import java.util.ArrayList;
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import loader.ProductLoader;
 
@@ -15,7 +16,8 @@ public class Catalog implements ICatalog {
 
     public ArrayList<Product> listProduct = new ArrayList<>();
     
-    public Catalog () {
+    @PostConstruct
+    public void init () {
         new ProductLoader().load(listProduct);
         new DiscountLoader().load(listProduct);
         applyProductDiscounts();

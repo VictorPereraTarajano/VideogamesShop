@@ -21,18 +21,12 @@
             <h3 class="modal-title" id="myModalLabel"><b>STADISTICS</b></h3>
                 <table class="table table-hover">
                     <%
-                        IStadistics stats = (IStadistics) new InitialContext().lookup("java:app/Tienda-ejb/Stadistics");
+                        IStadistics stats = (IStadistics) request.getServletContext().getAttribute("Stadistics");
                     %>
                     <tr class="info"><td><h3><b>NUMBER OF HOME ACCESS : </b></h3></td><td><h3><%=stats.getNumAccess() %></h3></td></tr>
                     <tr class="info"><td><h3><b>NUMBER OF SHOPPING CART ACCESS : </b></h3></td><td><h3><%=stats.getNumAccessShoppingCart()%></h3></td></tr>
                     <tr class="info"><td><h3><b>NUMBER OF SUCCESSFUL BUYS : </b></h3></td><td><h3><%=stats.getNumSuccesfulBuys()%></h3></td></tr> 
-                    <tr class="info"><td><h3><b>TOTAL : </h3></td><td><h3><%=stats.getTotal()%> € </b></h3></td></tr> 
-                    <tr class="info"><td><h3><b>MOST PURCHASED PRODUCTS :</b></h3></td><td><h3>
-                    <%
-                        for (Product product : stats.getMostPurchasedProducts(5)) {
-                            out.println(product.getName()+",");
-                        }
-                    %></h3></td></tr> 
+                    <tr class="info"><td><h3><b>TOTAL : </h3></td><td><h3><%=stats.getTotal()%> € </b></h3></td></tr></td></tr> 
                 </table>
         </div>
         <form action="frontcontroller" method="POST">

@@ -54,12 +54,7 @@ public abstract class FrontCommand {
     }
     
     public IStadistics getStadistics () {
-            try {
-                return (IStadistics) new InitialContext().lookup("java:app/Tienda-ejb/Stadistics");
-            } catch (NamingException ex) {
-                ex.printStackTrace();
-                return null;
-            }
+        return (IStadistics) context.getAttribute("Stadistics");
     }
 
     public void forward(HttpServletRequest request, HttpServletResponse response, String to) {

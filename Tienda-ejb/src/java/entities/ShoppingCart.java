@@ -4,6 +4,7 @@ import interfaces.ICatalog;
 import interfaces.IShoppingCart;
 import java.util.Date;
 import java.util.HashMap;
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
 import loader.ProductLoader;
 
@@ -15,7 +16,8 @@ public class ShoppingCart implements IShoppingCart {
     private Date date;
     private Client client;
   
-    public ShoppingCart () {
+    @PostConstruct
+    public void init () {
         cart = new HashMap<>();
         client = new Client();
     }

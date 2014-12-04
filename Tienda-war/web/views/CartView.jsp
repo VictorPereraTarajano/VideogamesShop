@@ -1,3 +1,4 @@
+<%@page import="javax.naming.InitialContext"%>
 <%@page import="interfaces.IShoppingCart"%>
 <%@page import="java.util.Map.Entry"%>
 <%@page import="java.util.Map"%>

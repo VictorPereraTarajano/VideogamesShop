@@ -8,28 +8,37 @@ import entities.Product;
 
 public class Tax extends ProductDiscount {
     
-    private static final String name="Tax"; 
+    private static final String name="Tax";
+    private int rate;
     
     public Tax() {
         super(name);
+        rate=getRateByIp();
     }    
             
     @Override
     public void apply (Product product) {
-        try {
-            if (Integer.parseInt(InetAddress.getLocalHost().getHostAddress().split("\\.")[0]) >= 100 ) {
-                product.setPrice(product.getPricePerUnit() + product.getPricePerUnit()*0.07);
-            } else {
-                product.setPrice(product.getPricePerUnit() + product.getPricePerUnit()*0.21);
-            }
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(Tax.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        double rateValue = (double) rate/100;
+        product.setPrice(product.getPricePerUnit() + (product.getPricePerUnit()*rateValue));
     }
 
     @Override
+    public int getRated() {
+        return rate;
+    }
+     
+    @Override
     public boolean isRated() {
-        return false;
+        return true;
+    }
+
+    private int getRateByIp() {
+        try {
+            if (Integer.parseInt(InetAddress.getLocalHost().getHostAddress().split("\\.")[0]) >= 100) return 7;
+        } catch (UnknownHostException ex) {
+            ex.printStackTrace();
+        }
+        return 21;
     }
     
 }
