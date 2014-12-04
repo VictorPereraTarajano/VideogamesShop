@@ -24,28 +24,36 @@
     <body>
         <div class="modal-body">
             <h3 class="modal-title" id="myModalLabel"><b>MY CART</b></h3>
-            <table class="table table-hover"><tr><th><h4><b>GAME</b></h4></th><th><h4><b>PRICE</h4></b></th><th><h4><b>AMOUNT</h4></b></th><th><h4><b>REMOVE</h4></b></th></tr>
+            <table class="table table-hover"><tr><th><h4><b>GAME</b></h4></th><th><h4><b>PRICE</h4></b></th><th><h4><b>AMOUNT</h4></b></th><th><h4><b>DISCOUNT</h4></b></th><th><h4><b>REMOVE</h4></b></th></tr>
                 <%
                             
                     IShoppingCart cart = (IShoppingCart) request.getSession().getAttribute("ShoppingCart");
                     HashMap<Product, Integer> list = cart.getCart();
                     
-                    double total = 0;
+                    double total = 0, subtotal=0;
                             
                     for (Product product : list.keySet()) {
-                        out.println("<tr class=\"info\"><td><h4><a href=\"/Tienda-war/frontcontroller?productID="+(product.getID()-1)+"&command=InfoCMD\">" + product.getName() + "</a></h4></td><td><h4>" +product.getPrice() + " €</h4></td><td><h4>" + list.get(product) + "</h4></td><td>"
+                        out.println("<tr class=\"info\"><td><h4><a href=\"/Tienda-war/frontcontroller?productID="+(product.getID()-1)+"&command=InfoCMD\">" + product.getName() + "</a></h4></td><td><h4>" +product.getPrice() + " €</h4></td><td><h4>" + list.get(product) + "</h4></td><td><h4>"); 
+                        
+                        if (product.getDiscount() != null) 
+                            out.print(product.getDiscount().getName());
+                        else
+                            out.print("-");
+                        out.print(" </h4></td><td>"
                             + "<form action=\"frontcontroller\" method=\"POST\">"
                                 + "<input type=\"hidden\" name=\"command\" value=\"RemoveCMD\">"
                                 + "<input type=\"hidden\" name=\"productID\" value=" + (product.getID() - 1)+ ">"
                                 + "<button type=\"submit\" class=\"btn btn-default alert-danger\"><span class=\"glyphicon glyphicon-remove\"></span></button>"
                             + "</form></td></tr>");
                         total += product.getPrice();
+                        subtotal += product.getPricePerUnit() * list.get(product);
                     }
                     cart.setTotal(total);
                     
                 %>
                 </table>
-            <button id="remove" class="btn btn-default"><h4><b>TOTAL : <%=DecimalFormater.format(total) %> </b><span class="glyphicon glyphicon-euro"></span></h4></button>
+            <button id="remove" class="btn btn-default"><h4><b>SUBTOTAL (without discounts): <%=DecimalFormater.format(subtotal) %> </b><span class="glyphicon glyphicon-euro"></span></h4></button>
+            <button id="remove" class="btn btn-default"><h4><b>TOTAL (with discounts): <%=DecimalFormater.format(total) %> </b><span class="glyphicon glyphicon-euro"></span></h4></button>
         </div>
         <div class="modal-footer">
             <form action="frontcontroller" method="POST">
