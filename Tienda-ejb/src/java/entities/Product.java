@@ -1,6 +1,5 @@
  package entities;
 
-import discount.Discount;
 import discount.Discountable;
 import java.io.Serializable;
 import java.util.Date;
@@ -37,7 +36,7 @@ public class Product extends Discountable implements Serializable{
     }
     
     public double getPrice() {
-        return price;
+        return getDiscount(this, 1, true);
     }
 
     public String getName() {

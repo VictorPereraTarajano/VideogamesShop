@@ -1,4 +1,4 @@
-package discount.productdiscount;
+package discount.type;
 
 import discount.Discount;
 import entities.Product;
@@ -13,8 +13,13 @@ public class TwoForOne extends Discount {
             if (amount % 2 == 0) 
                  return product.getPricePerUnit()*(amount/2);
             else 
-                return (product.getPricePerUnit()*(amount/2)) + product.getPricePerUnit();
+                return (product.getPricePerUnit()*((amount-1)/2));
         }
+    }
+
+    @Override
+    public double apply(double subtotal) {
+        return 0;
     }
   
 }

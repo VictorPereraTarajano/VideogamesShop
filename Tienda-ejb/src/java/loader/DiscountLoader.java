@@ -21,12 +21,8 @@ public class DiscountLoader {
                 String[] splitLine = line.split(";");
                 if (Integer.parseInt(splitLine[0]) == ID) {
                     try {
-                        list.add((Discount) Class.forName("discount.productdiscount."+splitLine[1]).newInstance());
-                    } catch (ClassNotFoundException ex) {
-                        Logger.getLogger(DiscountLoader.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (InstantiationException ex) {
-                        Logger.getLogger(DiscountLoader.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (IllegalAccessException ex) {
+                        list.add((Discount) Class.forName("discount.type."+splitLine[1]).newInstance());
+                    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
                         Logger.getLogger(DiscountLoader.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } 

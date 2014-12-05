@@ -2,7 +2,7 @@
 
 **************** USER INFO **************** 
 *                                                      
-*      Date    : Thu Dec 04 00:00:16 GMT 2014
+*      Date    : Fri Dec 05 18:31:05 GMT 2014
 *      Name    : null
 *      Surname : null
 *      Email   : null
@@ -11,9 +11,9 @@
 *      CVC     : null
 *
 *********************** SHOPPING CART *******************************
-*   ID          PRODUCT             PRIZE          AMOUNT          CODE     *
-      1          The Witcher 2 30.0       1          NpnuDVeH  
-      2          Zelda Majora's Mask HD 30.0       6          ZiEPUzot  
+*   ID          PRODUCT             PRICE          AMOUNT          CODE     *
+      2          Zelda Majora's Mask HD 64.2       2          JalXOMkb  
+      3          Diablo 3   20.865000000000002 2          rthRnrVd  
 -------------------------------------------------
-                    TOTAL : 60.0 €
+                    TOTAL : 119.41199999999999 €
 

@@ -42,7 +42,7 @@ public class Generator {
                     
             if (!cartList.isEmpty()) {
                 file.append("*********************** SHOPPING CART *******************************\n");
-                file.append("*   ID          PRODUCT             PRIZE          AMOUNT          CODE     *\n");
+                file.append("*   ID          PRODUCT             PRICE          AMOUNT          CODE     *\n");
                 for (Entry<Product, Integer> entry : cartList.entrySet()) {
                     Product product = entry.getKey();
                     Integer amount = entry.getValue();

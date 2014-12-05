@@ -9,4 +9,6 @@ public interface ICatalog {
      
     public ArrayList<Product> getCatalog();
     
+    public ArrayList<Product> getPage(int page);
+    
 }

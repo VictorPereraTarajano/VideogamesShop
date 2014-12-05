@@ -30,6 +30,7 @@
                 </table>
         </div>
         <form action="frontcontroller" method="POST">
+            <input type="hidden" name="Page" value="1">
             <input  type="hidden" name="command" value="HomeCMD">
             <button type="submit" id="buttonCart" class="btn btn-default btn-lg alert-danger pull-right">HOME <span class="glyphicon glyphicon-home"></span></button>
         </form>

@@ -8,14 +8,15 @@ public abstract class Discount {
     
     public abstract double apply(Product product, int amount);
     
+    public abstract double apply (double subtotal);
+    
     public static double applyIVA (double subtotal) {
         double rate=1;
         try {
-            if (Integer.parseInt(InetAddress.getLocalHost().getHostAddress().split("\\.")[0]) >= 100) {
+            if (Integer.parseInt(InetAddress.getLocalHost().getHostAddress().split("\\.")[0]) >= 100) 
                 rate= (double) 7/100;
-            } else {
+            else 
                 rate= (double) 21/100;
-            }
         } catch (UnknownHostException ex) {
             ex.printStackTrace();
         }

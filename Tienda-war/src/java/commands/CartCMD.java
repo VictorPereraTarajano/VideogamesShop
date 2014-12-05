@@ -1,6 +1,5 @@
 package commands;
 
-import interfaces.IShoppingCart;
 import interfaces.IStadistics;
 
 

@@ -1,4 +1,4 @@
-package discount.productdiscount;
+package discount.type;
 
 import discount.Discount;
 import java.util.Date;
@@ -12,8 +12,13 @@ public class TemporaryDiscount extends Discount {
         int days2 = (int) (new Date().getTime()/(1000*60*60*24));
         double rateValue = (double) 20/100;
         if (days1 - days2 > 120 ) {
-             return (product.getPricePerUnit() - (product.getPricePerUnit()*rateValue));
+             return (product.getPricePerUnit()*rateValue)*amount;
         }
+        return 0;
+    }
+
+    @Override
+    public double apply(double subtotal) {
         return 0;
     }
     

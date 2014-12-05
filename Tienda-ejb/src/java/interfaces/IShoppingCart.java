@@ -1,6 +1,5 @@
 package interfaces;
 
-import discount.Discountable;
 import entities.Client;
 import java.util.Date;
 import java.util.HashMap;
@@ -24,6 +23,8 @@ public interface IShoppingCart {
     
     public void setDate (Date date);
     
+    public double getSubTotal ();
+    
     public Date getDate ();
     
     public Client getClient ();
@@ -33,5 +34,7 @@ public interface IShoppingCart {
     public void clear ();
     
     public double getDiscount(HashMap<Product, Integer> map);
+    
+    public boolean isEmpty ();
 
 }

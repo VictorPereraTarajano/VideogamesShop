@@ -1,3 +1,4 @@
+<%@page import="java.util.Map.Entry"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="entities.Client"%>
 <%@page import="interfaces.IShoppingCart"%>
@@ -44,25 +45,19 @@
         </div>
         
         <div class="modal-body">
-            <h3 class="modal-title" id="myModalLabel">SHOPPING CART</h3>
-            <br>
-            <table class="table table-hover"><tr><th>GAME</th><th>PRIZE</th><th>AMOUNT</th></tr>
-                <%
-                            
-                    HashMap<Product, Integer> cartList = cart.getCart();
-                    double total = 0;
-                            
-                    for (Product product : cartList.keySet()) {
-                        out.println("<tr class=\"info\"><td><h4>" + product.getName() + "</h4></td><td><h4>" + product.getPrice() + " €</h4></td><td><h4>" + cartList.get(product) + "</h4></td><td>");
-                        total += product.getPrice();
-                    }
-                    cart.setTotal(total);
+            <h3 class="modal-title" id="myModalLabel"><b>SHOPPING CART</b></h3>
+                <table class="table table-hover"><tr><th><h4><b>GAME</b></h4></th><th><h4><b>PRICE PER UNIT</h4></b></th><th><h4><b>PRICE PER UNIT + DISCOUNT</h4></b></th><th><h4><b>AMOUNT</h4></b></th></tr>
+                <%        
+                    for (Entry<Product, Integer> entry : cart.getCart().entrySet()) {
+                        Product product = entry.getKey();
+                        Integer amount = entry.getValue();
+                        out.println("<tr class=\"info\"><td><h4><a href=\"/Tienda-war/frontcontroller?productID="+(product.getID()-1)+"&command=InfoCMD\">" + product.getName() + "</a></h4></td><td><h4>" +product.getPricePerUnit() + " €</h4></td><td><h4>" +product.getDiscount(product, amount, false)+" €</h4></td><td><h4>" + amount + "</h4></td></tr>");
+                    }        
                 %>
                 </table>
-            <button id="remove"class="btn btn-default "><h4>TOTAL : <%=DecimalFormater.format(total) %> €</h4></button>
-
-        </div>
-        
+                <button id="remove" class="btn btn-default"><h4><b>SUBTOTAL : <%=DecimalFormater.format(cart.getSubTotal()) %> </b><span class="glyphicon glyphicon-euro"></span></h4></button>
+                <button id="remove" class="btn btn-default"><h4><b>TOTAL [SUBTOTAL + DISCOUNTS + IVA] : <%=DecimalFormater.format(cart.getTotal()) %> </b><span class="glyphicon glyphicon-euro"></span></h4></button>
+        </div>      
             <form action="frontcontroller" method="POST">
                 <input type="hidden" name="command" value="InfoUserCMD">
                 <button type="submit" id="buttonCart" class="btn btn-primary btn-lg pull-right">AUTHENTICATION FORM <span class="glyphicon glyphicon-align-justify"></span></button>

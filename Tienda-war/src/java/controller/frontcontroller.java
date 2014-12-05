@@ -1,7 +1,6 @@
 package controller;
 
 import commands.FrontCommand;
-import entities.Stadistics;
 import interfaces.IStadistics;
 import java.io.IOException;
 import java.util.logging.Level;

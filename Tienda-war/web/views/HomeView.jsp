@@ -26,6 +26,9 @@
         <h1 ><b>GAMES OF THE WEEK</b></h1>
 
         <%
+            int catalogPage = 1;
+            if (request.getParameter("Page") != null) catalogPage = Integer.parseInt(request.getParameter("Page"));
+                       
             ICatalog catalog = (ICatalog) new InitialContext().lookup("java:app/Tienda-ejb/Catalog");
             IShoppingCart cart = (IShoppingCart) request.getSession().getAttribute("ShoppingCart");
         %>
@@ -42,12 +45,7 @@
         
         <div class="row">
         <%
-            
-           ArrayList<Product> list = catalog.getCatalog();
-        
-            for (int i = 0; i < list.size(); i++) {
-                Product product = list.get(i);
-
+            for (Product product : catalog.getPage(catalogPage)) {
                 out.println("<div class=\"col-sm-6 col-md-4\">"
                         + "<div class=\"thumbnail\">"
                         + "<img src=\"" + product.getURLimage() + "\" alt=\"...\" style=\"height: 380px;width: 280px\">"
@@ -63,23 +61,28 @@
                         + "<input type=\"hidden\" name=\"command\" value=\"InfoCMD\">"
                         
                         + "<button type=\"submit\" class=\"btn btn-primary btn-lg\" ><b>INFO </b><span class=\"glyphicon glyphicon-info-sign\"></span></button>"
-                        + "<button class=\"btn btn-danger btn-lg pull-right disabled \" ><b>" + DecimalFormater.format((double) Discount.applyIVA(product.getDiscount(product, 1))) + " <span class=\"glyphicon glyphicon-euro\"></span></b></button>"
+                        + "<button class=\"btn btn-danger btn-lg pull-right disabled \" ><b>" + DecimalFormater.format(product.getPrice())+ " €</b></button>"
                         + "</form>"
-                        + "<h4><b>DISCOUNT: "+product.getPricePerUnit());
-                       /* Discount disc = product.getDiscount();
-                        
-                        if (disc != null && product.getDiscount().isRated()) 
-                            out.print(" "+disc.getName()+" "+disc.getRated()+" % of "+product.getPricePerUnit()+" €");
-                        else
-                            out.print(" "+disc.getName());*/
-                        
-                        out.print("</b></h4>"
+                        + "<button class=\"btn btn-warning btn-lg pull-right disabled \" ><b> DISC/IVA INC. </b></button>"
+                        + "<h4><b>PRICE BEFORE: "+product.getPricePerUnit()+" €</b></h4>"
                         + "</div>"
                         + "</div>"
                         + "</div>");
             }
 
         %>
+        </div>
+        <div class="containerButton">
+            <form action="frontcontroller" method="GET">
+                <input type="hidden" name="command" value="HomeCMD">
+                <input type="hidden" name="Page" value="<%=(catalogPage + 1)%>">
+                <button type="submit" id="buttonNext" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-circle-arrow-right"></span><b> NEXT</b></button>        
+            </form>
+            <form action="frontcontroller" method="GET">
+                <input type="hidden" name="command" value="HomeCMD">
+                <input type="hidden" name="Page" value="<%=(catalogPage - 1)%>">
+                <button type="submit" id="buttonLeft" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-circle-arrow-left"></span><b> PREVIOUS</b></button>        
+            </form>
         </div>
     </body>
 </html>
