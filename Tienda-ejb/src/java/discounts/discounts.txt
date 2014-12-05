@@ -1,4 +1,5 @@
 1;TwoForOne
+1;RandomDiscount
 5;TemporaryDiscount
 4;TemporaryDiscount
 2;RandomDiscount
